@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id='container'>
+    <div id='test'>hello</div>
+  </div>
+  <div id='button'>clear</div>
+  <script>
+    document.querySelector('#container').__date__ = new Date()
+    // let flag = false;
+    // document.querySelector('#test').addEventListener('click', function(){ flag = true})
+    document.querySelector('#test').addEventListener('click', clickTest)
+    document.querySelector('#button').addEventListener('click', clickTest)
+    function clickTest() {
+      removeElement(document.querySelector('#container'))
+    }
+
+    // setTimeout(() => {
+    //   if (flag){
+    //     clickTest()
+    //   }
+    // }, 5000);
+
+    function removeElement(_element) {
+      let _parentElement = _element.parentNode;
+      if (_parentElement) {
+        _parentElement.removeChild(_element);
+      }
+    }
+  </script>
+</body>
+
+</html>
